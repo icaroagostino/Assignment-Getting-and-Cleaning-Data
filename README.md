@@ -16,7 +16,7 @@ Files description:
 
 ### **How the `run_analysis.R` script works:**
 
-#### **step 0**: Check if the necessary data is already availabre in the working directory, if not the script download and unzip the data.
+#### **Step 0**: Check if the necessary data is already availabre in the working directory, if not the script download and unzip the data.
   
 ```r
 # Check if the data is available in the current folder
@@ -32,7 +32,7 @@ if (!'UCI_HAR_Dataset.zip' %in% dir()){
 }
 ```
 
-#### **step 1**: Merges the training and the test sets to create one data set.
+#### **Step 1**: Merges the training and the test sets to create one data set.
   
 First, all the necessary data is imported and organized.
     
@@ -80,7 +80,7 @@ Then, the data is merged:
 unified_dataset <- rbind(train_data, test_data)
 ```
 
-#### **step 2**: Extracts only the measurements on the mean and standard  deviation for each measurement.
+#### **Step 2**: Extracts only the measurements on the mean and standard  deviation for each measurement.
   
 This part was performed using `grep()` function with the pattern `mean|std` in the name of the columns:
 
@@ -95,7 +95,7 @@ sub_data <- cbind(
 )
 ```
 
-#### **step 3**: Uses descriptive activity names to name the activities in the data set
+#### **Step 3**: Uses descriptive activity names to name the activities in the data set
 
 Here the script replace the name of the activity based on the code provided in the `activity_labels.txt` file.
 
@@ -107,13 +107,13 @@ for(i in 1:6) {
 }; rm(i)
 ```
 
-#### **step 4**: Appropriately labels the data set with descriptive variable names.
+#### **Step 4**: Appropriately labels the data set with descriptive variable names.
 
 the current data set (sub_data) already has the
 described labels of the variables provided in the
 'features.txt' file, so I just decided to only apply
 the clean_names() function of the janitor package if
-the package is available in the current session
+the package is available in the current session.
 
 ```r
 if (require(janitor)) {
@@ -123,7 +123,7 @@ if (require(janitor)) {
 }
 ```
 
-#### **step 5**: From the data set in step 4, creates a second independent tidy data set with the average of each variable for each activity and each subject
+#### **Step 5**: From the data set in step 4, creates a second independent tidy data set with the average of each variable for each activity and each subject
 
 Here I decided to customize a function to calc the mean
 values for all variables for each activity and each subject.
@@ -154,7 +154,7 @@ calc_avg <- function(subject, activity){
 
 Then, using the calc_avg function I calc the
 mean for for all variables for each activity and each subject
-and save in a list called 'result' using lapply
+and save in a list called 'result' using lapply.
 
 ```r
 result <- lapply(1:30, function(j) {
