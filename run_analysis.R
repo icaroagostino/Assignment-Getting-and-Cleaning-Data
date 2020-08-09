@@ -1,11 +1,18 @@
-# Getting and Cleaning Data Course Project
+# Getting and Cleaning Data - Course Project
 
-# Download data
-download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip',
-              destfile = 'UCI_HAR_Dataset.zip')
+# Download and unzip data
 
-# Unzip teh files
-unzip('UCI_HAR_Dataset.zip')
+# Check if the data is available in the current folder
+if (!'UCI_HAR_Dataset.zip' %in% dir()){
+  
+  # Download the data
+  download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip',
+                destfile = 'UCI_HAR_Dataset.zip')
+  
+  # Unzip the files
+  unzip('UCI_HAR_Dataset.zip')
+  
+}
 
 #############################################
 #### 1. Merges the training and the test ####
@@ -165,3 +172,7 @@ colnames(avgTidyDataset)[3:ncol(avgTidyDataset)] <-
 # Show the final data set
 
 View(avgTidyDataset)
+
+# Save the final tidy data set
+
+write.csv(avgTidyDataset, file = 'tidyDataset.csv', row.names = F)
