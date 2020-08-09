@@ -173,6 +173,7 @@ colnames(avgTidyDataset)[3:ncol(avgTidyDataset)] <-
 
 View(avgTidyDataset)
 
-# Save the final tidy data set
+# Save the final tidy data set in txt and csv
 
 write.table(avgTidyDataset, file = 'tidyDataset.txt', row.name=FALSE)
+write.table(avgTidyDataset, file = 'tidyDataset.csv', row.name=FALSE)

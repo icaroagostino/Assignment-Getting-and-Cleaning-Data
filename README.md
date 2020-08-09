@@ -9,7 +9,7 @@ This project is based on the dataset: [Human Activity Recognition Using Smartpho
 Files description:
 
   - **CodeBook.md**: a code book that describes the variables.
-  - **tidyDataset.txt**: independent tidy data set with the average of each variable for each activity and each subject.
+  - **tidyDataset.txt/csv**: independent tidy data set with the average of each variable for each activity and each subject.
   - **run_analysis.R**: an R script that downloads, unzips, merges and creates the tidyDataset.
   
 ---
