@@ -14,7 +14,7 @@ Files description:
   
 ---
 
-**How the `run_analysis.R` script works:**
+### **How the `run_analysis.R` script works:**
 
 #### **step 0**: Check if the necessary data is already availabre in the working directory, if not the script download and unzip the data.
   
