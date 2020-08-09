@@ -10,4 +10,4 @@ Files description:
 
   - **CodeBook.md**: a code book that describes the variables, the data, and transformations made.
   - **tidyDataset.csv**: independent tidy data set with the average of each variable for each activity and each subject.
-  - **run_analysis.R**: an R script that download, unzip, merge and crete the tidyDataset.
+  - **run_analysis.R**: an R script that downloads, unzips, merges and creates the tidyDataset.

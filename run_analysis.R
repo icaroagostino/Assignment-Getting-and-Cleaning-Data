@@ -175,4 +175,4 @@ View(avgTidyDataset)
 
 # Save the final tidy data set
 
-write.csv(avgTidyDataset, file = 'tidyDataset.csv', row.names = F)
+write.table(avgTidyDataset, file = 'tidyDataset.txt', row.name=FALSE)
